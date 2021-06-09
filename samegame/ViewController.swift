@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configure()
+    }
+
+    func configure() {
         // UILabelの設定
         let size = 30
         var x = 30
@@ -25,21 +29,21 @@ class ViewController: UIViewController {
             y = y + size + 5
 
         }
-
     }
 
-
-    func makeSquare(x: Int, y: Int, text: String, squareSize: Int) -> UILabel {
-        let titleLabel = UILabel() // ラベルの生成
-//        titleLabel.frame = CGRect(x: 30, y: 100, width: UIScreen.main.bounds.size.width, height: 40) // 位置とサイズの指定
+    func makeSquare(x: Int, y: Int, text: String, squareSize: Int) -> UIButton {
+        let titleLabel = UIButton() // ラベルの生成
         titleLabel.frame = CGRect(x: x, y: y, width: squareSize, height: squareSize)
-        titleLabel.textAlignment = NSTextAlignment.center // 横揃えの設定
-        titleLabel.text = "1" // テキストの設定
-        titleLabel.textColor = UIColor.black // テキストカラーの設定
-        titleLabel.font = UIFont(name: "HiraKakuProN-W6", size: 17) // フォントの設定
+        titleLabel.setTitle(text, for: .normal)
         titleLabel.backgroundColor = .lightGray
+        titleLabel.addTarget(self, action: #selector(tappedCard(_:)), for: UIControl.Event.touchUpInside)
+        
         return titleLabel
+    }
 
-}
+    @objc func tappedCard(_ sender: UIButton) {
+        print(sender.titleLabel?.text)
+
+    }
 }
 
