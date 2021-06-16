@@ -14,6 +14,7 @@
 		21095BFA266F98C200A41808 /* samegame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21095BF8266F98C200A41808 /* samegame.xcdatamodeld */; };
 		21095BFC266F98CC00A41808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21095BFB266F98CC00A41808 /* Assets.xcassets */; };
 		21095BFF266F98CC00A41808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21095BFD266F98CC00A41808 /* LaunchScreen.storyboard */; };
+		218BD92F2672C5310064C495 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BD92E2672C5300064C495 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		21095BFB266F98CC00A41808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21095BFE266F98CC00A41808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21095C00266F98CC00A41808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		218BD92E2672C5300064C495 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				21095BEF266F98C200A41808 /* AppDelegate.swift */,
 				21095BF1266F98C200A41808 /* SceneDelegate.swift */,
 				21095BF3266F98C200A41808 /* ViewController.swift */,
+				218BD92E2672C5300064C495 /* Card.swift */,
 				21095BF5266F98C200A41808 /* Main.storyboard */,
 				21095BFB266F98CC00A41808 /* Assets.xcassets */,
 				21095BFD266F98CC00A41808 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				21095BF4266F98C200A41808 /* ViewController.swift in Sources */,
 				21095BFA266F98C200A41808 /* samegame.xcdatamodeld in Sources */,
+				218BD92F2672C5310064C495 /* Card.swift in Sources */,
 				21095BF0266F98C200A41808 /* AppDelegate.swift in Sources */,
 				21095BF2266F98C200A41808 /* SceneDelegate.swift in Sources */,
 			);
