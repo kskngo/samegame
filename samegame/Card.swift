@@ -23,8 +23,6 @@ class Card {
         titleLabel.text = emoji
         titleLabel.backgroundColor = .lightGray
         titleLabel.textAlignment = .center
-//        titleLabel.addTarget(self, action: #selector(tappedCard(_:)), for: UIControl.Event.touchUpInside)
-
         return titleLabel
     }
 }

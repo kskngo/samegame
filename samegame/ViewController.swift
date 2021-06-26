@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             selectedColumn = 6
         case cards[0][7].frame.minX...cards[0][7].frame.maxX:
             print("col8")
-            selectedColumn = 6
+            selectedColumn = 7
         default:
             selectedColumn = nil
         }
@@ -127,9 +127,8 @@ class ViewController: UIViewController {
 
         // 選択されたセルに対する処理
         if let selectedColumn = selectedColumn, let selectedRow = selectedRow {
-//            cards[selectedColumn][selectedRow].backgroundColor = .clear
-//            cards[selectedColumn][selectedRow].textColor = .clear
-            cards[selectedRow][selectedColumn].isHidden = true
+//            cards[selectedRow][selectedColumn].isHidden = true
+            updateCard(selectedRow: selectedRow, selectedColumn: selectedColumn)
         }
 
 
@@ -147,5 +146,44 @@ class ViewController: UIViewController {
 //                       movePiece(tx: tx, ty: ty)
 //                   }
        }
+
+    func updateCard(selectedRow: Int, selectedColumn: Int) {
+
+        // 隣り合う同じカードを消す処理
+        deleteCard(selectedRow: selectedRow, selectedColumn: selectedRow)
+        // カードを動かす
+
+
+
+    }
+
+    func deleteCard(selectedRow: Int, selectedColumn: Int) {
+
+        let selectedEmoji = cards[selectedRow][selectedColumn].text!
+        let targetRow = selectedRow + 1
+        // 縦方向の判定
+        for i in targetRow..<7 {
+            print(selectedEmoji + " " + cards[i][selectedColumn].text!)
+            if selectedEmoji == cards[i][selectedColumn].text {
+                cards[i][selectedColumn].isHidden = true
+//                cards[selectedRow + 1][selectedColumn].isHidden = true
+            }
+        }
+
+
+
+
+
+    }
+
+
+
+    func moveVertical(selectedRow: Int, selectedColumn: Int) {
+
+
+    }
+
+
+
 }
 
