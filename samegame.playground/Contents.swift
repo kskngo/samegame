@@ -8,8 +8,8 @@ struct Card<CardContent> {
 }
 
 struct CardsState {
-    static let numberOfRows = 3
-    static let numberOfColumns = 3
+    static let numberOfRows =  5
+    static let numberOfColumns = 5
     let cardValues = ["👻", "🐤"]
 //    let cardValues = ["👻", "🐤", "🍄"]
 
@@ -28,12 +28,15 @@ struct CardsState {
 
     }
 
-
     func printCards() {
         for cardRows in cards {
             var cardRow = ""
             for card in cardRows {
-                cardRow += "[\(card.value)]"
+                if card.isFixed {
+                    cardRow += "[  ]"
+                } else {
+                    cardRow += "[\(card.value)]"
+                }
             }
             print(cardRow)
         }
@@ -65,12 +68,33 @@ func tapedCard(rowIndex: Int, coloumIndex: Int) {
 func updateCard(rowIndex: Int, coloumIndex: Int) {
     let selectedCardValue = cardsState.cards[rowIndex][coloumIndex].value
 
-    let isMatch = checkRightCard(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex)
+    updateRightCards(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex)
+    updateLeftCards(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex)
+    cardsState.printCards()
+}
 
-    print(isMatch)
+func updateRightCards(selectedCardValue: String, rowIndex: Int, coloumIndex: Int) {
+    if let isMatch = checkRightCard(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex) {
 
-//    cardsState.cards[rowIndex][coloumIndex].value = " "
-//    cardsState.printCards()
+        if isMatch {
+            cardsState.cards[rowIndex][coloumIndex].isFixed = true
+            cardsState.cards[rowIndex][coloumIndex + 1].isFixed = true
+            // 右隣のカードに対して再起呼び出し
+            updateRightCards(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex + 1)
+        }
+    }
+}
+
+func updateLeftCards(selectedCardValue: String, rowIndex: Int, coloumIndex: Int) {
+    if let isMatch = checkLeftCard(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex) {
+
+        if isMatch {
+            cardsState.cards[rowIndex][coloumIndex].isFixed = true
+            cardsState.cards[rowIndex][coloumIndex - 1].isFixed = true
+            // 左隣のカードに対して再起呼び出し
+            updateLeftCards(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex - 1)
+        }
+    }
 }
 
 // 右のカードがselectedCardValueと一致する場合trueを返す。一致しない場合falseを返す。
@@ -84,8 +108,21 @@ func checkRightCard(selectedCardValue: String, rowIndex: Int, coloumIndex: Int) 
     }
 
     let rightCardValue = cardsState.cards[rowIndex][targetColoumIndex].value
-    print("rightCardValue\(rightCardValue)")
+    print("rightCardValue:\(rowIndex):\(targetColoumIndex)=\(rightCardValue)")
     return selectedCardValue == rightCardValue
+}
+
+func checkLeftCard(selectedCardValue: String, rowIndex: Int, coloumIndex: Int) -> Bool? {
+
+    let targetColoumIndex = coloumIndex - 1
+    // 左のカードが存在するか確認
+    guard targetColoumIndex < CardsState.numberOfColumns else {
+        return nil
+    }
+
+    let leftCardValue = cardsState.cards[rowIndex][targetColoumIndex].value
+    print("leftCardValue:\(rowIndex):\(targetColoumIndex)=\(leftCardValue)")
+    return selectedCardValue == leftCardValue
 }
 
 func updateScore() {
@@ -113,9 +150,9 @@ var game = Game(score: score, cards: cardsState)
 startNewGame()
 
 let selectedCardIndex = (0, 0)
-tapedCard(rowIndex: 0, coloumIndex: 0)
-tapedCard(rowIndex: 0, coloumIndex: 1)
-tapedCard(rowIndex: 0, coloumIndex: 2)
+tapedCard(rowIndex: 0, coloumIndex: 4)
+//tapedCard(rowIndex: 0, coloumIndex: 1)
+//tapedCard(rowIndex: 0, coloumIndex: 2)
 
 
 

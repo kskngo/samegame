@@ -3,7 +3,12 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=2714&amp;EndingColumnNumber=0&amp;EndingLineNumber=119&amp;StartingColumnNumber=0&amp;StartingLineNumber=118&amp;Timestamp=646407185.173601"
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=4378&amp;EndingColumnNumber=25&amp;EndingLineNumber=154&amp;StartingColumnNumber=24&amp;StartingLineNumber=154&amp;Timestamp=646576790.636694"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=39&amp;CharacterRangeLoc=4257&amp;EndingColumnNumber=22&amp;EndingLineNumber=152&amp;StartingColumnNumber=14&amp;StartingLineNumber=151&amp;Timestamp=646576790.63683"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
