@@ -26,7 +26,6 @@ struct CardsState {
             }
             cards.append(row)
         }
-
     }
 
     func printCards() {
@@ -41,6 +40,12 @@ struct CardsState {
             }
             print(cardRow)
         }
+        print("---------")
+    }
+
+    func existsIndex(targetRowIndex: Int, targetColoumIndex: Int) -> Bool {
+        0 <= targetColoumIndex && targetColoumIndex < Self.numberOfColumns
+            && 0 <= targetRowIndex && targetRowIndex < Self.numberOfRows
     }
 }
 
@@ -70,44 +75,57 @@ func updateCards(rowIndex: Int, coloumIndex: Int) {
     let selectedCardValue = cardsState.cards[rowIndex][coloumIndex].value
 
     // タップされたカードの右側にあるカードを消す
-    deleteMatchCards(selectedCardValue, rowIndex, coloumIndex, getNextColoumIndex: { (coloumIndex: Int) -> Int in coloumIndex + 1})
+    deleteMatchCards(selectedCardValue, rowIndex, coloumIndex, getTargetRowIndex: { $0 }, getTargetColoumIndex: { $0 + 1 })
     // タップされたカードの左側にあるカードを消す
-    deleteMatchCards(selectedCardValue, rowIndex, coloumIndex, getNextColoumIndex: { (coloumIndex: Int) -> Int in coloumIndex - 1})
-
-
+    deleteMatchCards(selectedCardValue, rowIndex, coloumIndex, getTargetRowIndex: { $0 }, getTargetColoumIndex: { $0 - 1 })
+    // タップされたカードの下側にあるカードを消す
+    deleteMatchCards(selectedCardValue, rowIndex, coloumIndex, getTargetRowIndex: { $0 + 1 }, getTargetColoumIndex: { $0 })
     cardsState.printCards()
 }
 
 // 隣り合う同じカードを消す
-func deleteMatchCards(_ selectedCardValue: String, _ rowIndex: Int, _ coloumIndex: Int, getNextColoumIndex: (Int) -> Int) {
-    if let isMatch = isMatchCard(selectedCardValue: selectedCardValue, rowIndex: rowIndex, coloumIndex: coloumIndex, getNextColoumIndex: getNextColoumIndex) {
+func deleteMatchCards(_ selectedCardValue: String, _ rowIndex: Int, _ coloumIndex: Int,
+                      getTargetRowIndex: (Int) -> Int, getTargetColoumIndex: (Int) -> Int) {
+    if let isMatch = isMatchCard(selectedCardValue: selectedCardValue,
+                                 rowIndex: rowIndex, coloumIndex: coloumIndex,
+                                 getTargetRowIndex: getTargetRowIndex,
+                                 getTargetColoumIndex: getTargetColoumIndex) {
 
         // 隣のカードが同じ場合
         if isMatch {
             cardsState.cards[rowIndex][coloumIndex].isFixed = true
-            cardsState.cards[rowIndex][getNextColoumIndex(coloumIndex)].isFixed = true
+            cardsState.cards[rowIndex][getTargetColoumIndex(coloumIndex)].isFixed = true
             // 隣のカードに対して再起呼び出し
-            deleteMatchCards(selectedCardValue, rowIndex, getNextColoumIndex(coloumIndex),  getNextColoumIndex: getNextColoumIndex)
+            deleteMatchCards(selectedCardValue,
+                             getTargetRowIndex(rowIndex),
+                             getTargetColoumIndex(coloumIndex),
+                             getTargetRowIndex: getTargetRowIndex,
+                             getTargetColoumIndex: getTargetColoumIndex)
         }
     }
 }
 
 // getNextColoumIndexのカードがselectedCardValueと一致する場合trueを返す。一致しない場合falseを返す。
 // getNextColoumIndexのカードが存在しない場合はnilを返す。
-func isMatchCard(selectedCardValue: String, rowIndex: Int, coloumIndex: Int, getNextColoumIndex: (Int) -> Int) -> Bool? {
+//getTargetCard
+func isMatchCard(selectedCardValue: String,
+                 rowIndex: Int,
+                 coloumIndex: Int,
+                 getTargetRowIndex: (Int) -> Int,
+                 getTargetColoumIndex: (Int) -> Int) -> Bool? {
 
-    let targetColoumIndex = getNextColoumIndex(coloumIndex)
+    let targetColoumIndex = getTargetColoumIndex(coloumIndex)
+    let targetRowIndex = getTargetRowIndex(rowIndex)
+
     // カードインデックスが存在するか確認
-    guard existsIndex(targetColoumIndex: targetColoumIndex, indexSize: CardsState.numberOfColumns) else {
+    guard cardsState.existsIndex(targetRowIndex: targetRowIndex, targetColoumIndex: targetColoumIndex) else {
         return nil
     }
     let targetCardValue = cardsState.cards[rowIndex][targetColoumIndex].value
     return selectedCardValue == targetCardValue
 }
 
-func existsIndex(targetColoumIndex: Int, indexSize: Int) -> Bool {
-    0 <= targetColoumIndex && targetColoumIndex < indexSize
-}
+
 
 func updateScore() {
     score.value += 1
@@ -135,7 +153,7 @@ startNewGame()
 
 //tapedCard(rowIndex: 0, coloumIndex: 0)
 //tapedCard(rowIndex: 0, coloumIndex: 1)
-tapedCard(rowIndex: 0, coloumIndex: 2)
+tapedCard(rowIndex: 2, coloumIndex: 2)
 
 
 
