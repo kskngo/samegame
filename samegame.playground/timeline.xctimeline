@@ -3,17 +3,22 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=4660&amp;EndingColumnNumber=23&amp;EndingLineNumber=155&amp;StartingColumnNumber=22&amp;StartingLineNumber=155&amp;Timestamp=646745764.422111"
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=8809&amp;EndingColumnNumber=0&amp;EndingLineNumber=268&amp;StartingColumnNumber=0&amp;StartingLineNumber=268&amp;Timestamp=652606210.037868"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=4555&amp;EndingColumnNumber=24&amp;EndingLineNumber=153&amp;StartingColumnNumber=0&amp;StartingLineNumber=152&amp;Timestamp=646745764.42229"
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=8764&amp;EndingColumnNumber=0&amp;EndingLineNumber=266&amp;StartingColumnNumber=0&amp;StartingLineNumber=266&amp;Timestamp=652606210.039072"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=4556&amp;EndingColumnNumber=0&amp;EndingLineNumber=154&amp;StartingColumnNumber=0&amp;StartingLineNumber=153&amp;Timestamp=646745764.422381"
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=8764&amp;EndingColumnNumber=5&amp;EndingLineNumber=267&amp;StartingColumnNumber=0&amp;StartingLineNumber=266&amp;Timestamp=652606210.0392669"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kosuke/Developer/samegame/samegame.playground#CharacterRangeLen=44&amp;CharacterRangeLoc=8765&amp;EndingColumnNumber=0&amp;EndingLineNumber=268&amp;StartingColumnNumber=0&amp;StartingLineNumber=267&amp;Timestamp=652606210.0394011"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
