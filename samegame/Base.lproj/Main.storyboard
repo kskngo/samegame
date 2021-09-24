@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,359 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="samegame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2KR-nh-gbd">
+                                <rect key="frame" x="92" y="338" width="230" height="220"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q5m-af-DjQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjQ-Tn-2ej">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DA1-4x-U7O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2y-nF-uPL">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axZ-7u-gXm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGf-uD-MV5">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ai2-As-zEC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDb-DU-oHn">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kBJ-8Y-VkN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsA-b4-ewW">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zDG-A5-05O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zk-U5-xJf">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCL-tO-lFg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CFq-x5-hWc">
+                                        <rect key="frame" x="0.0" y="38" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVZ-TR-W0l">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fo5-Gs-0Bh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-ae-Vtz">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FSc-PC-W5d"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-h5-VMT">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J14-Is-Dpx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1J-fw-1et">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lz-pI-3P5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BM-HF-dWq">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJf-KP-JWK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kq-qb-Rcx">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bG2-Yt-yNC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="de2-aq-7EJ">
+                                        <rect key="frame" x="0.0" y="76" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXM-gr-QbQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ui5-7E-COb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avj-UC-Avy">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQ9-0a-Sjf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-nO-rD9">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aae-WO-JRQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="15" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-eq-8mu">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xy5-J9-eB1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="16" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEG-1V-bK7">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tyO-dH-SRe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="17" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJT-Qr-2tp">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2T5-Dp-vG4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G38-GY-SOV">
+                                        <rect key="frame" x="0.0" y="114" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="18" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPn-cc-yU3">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRM-We-xAX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="19" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-Pk-QFk">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvQ-vm-p3t"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="20" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTu-eg-7Jq">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuE-2p-mKL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="21" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIy-XC-ZdW">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tV3-3P-JRg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq9-e1-tD5">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4a-jF-Ohz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="23" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tW1-wI-Ufe">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nf2-XO-D0E"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fdk-VU-hKx">
+                                        <rect key="frame" x="0.0" y="152" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="24" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-ed-NaK">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKh-1U-yKR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="25" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gh-fq-ot8">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNO-uU-7LK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="26" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-Os-rmq">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGG-9F-EVp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="27" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7y-1r-UOY">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XXB-c6-6tW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="28" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCK-Uw-hN5">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T55-rW-Y2c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="29" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjb-NX-f7l">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpG-9p-I8m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-j6-ueS">
+                                        <rect key="frame" x="0.0" y="190" width="230" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzx-KP-4Ak">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peT-Mc-wxg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="31" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq0-AP-YXD">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6vg-f3-j0w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="32" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-hc-hkO">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNR-KD-lAv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="33" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-cd-Djh">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6z5-sO-gZK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="34" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyr-5X-hWM">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dt3-kw-1n5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="35" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITh-zk-PWt">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBn-Lm-22L"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2KR-nh-gbd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q3g-4A-TQQ"/>
+                            <constraint firstItem="2KR-nh-gbd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oM9-oE-Vao"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="d1y-1u-eCd">
+                    <rect key="frame" x="0.0" y="0.0" width="56" height="54"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <state key="normal" title="B"/>
+                    <connections>
+                        <action selector="tappedCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJx-zq-Ujm"/>
+                    </connections>
+                </button>
             </objects>
-            <point key="canvasLocation" x="28.125" y="87.676056338028175"/>
+            <point key="canvasLocation" x="27.536231884057973" y="87.053571428571431"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
