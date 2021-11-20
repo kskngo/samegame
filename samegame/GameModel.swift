@@ -11,18 +11,22 @@ struct Card {
     var isFixed: Bool
 }
 
-enum GameState {
-    case idle
-    case running(ScoreState)
-    case gameOver(ScoreState)
-}
 
-enum ScoreState {
-    case currentScore
-    case bestScore
-}
 
 class GameModel {
+
+    struct ScoreState {
+        var currentScore: Int
+        var bestScore: Int
+    }
+
+    enum GameState {
+        case idle
+        case running(ScoreState)
+        case gameOver(ScoreState)
+    }
+
+    var gameState: GameState = .idle
 
     private static let numberOfRows =  6
     private static let numberOfColumns = 6
@@ -30,42 +34,56 @@ class GameModel {
 
     private(set)var cards = [Card]()
     private(set)var originalCards = [Card]()
-    private(set) var totalScore = 0
+//    private(set) var totalScore = 0
     private(set) var currentScore = 0
     private(set) var earnedScore = 0
+    private(set) var isGameOver = false
+    var numberOfEnableCards: Int {
+        cards.filter{$0.isFixed == false}.count
+    }
 
     func startNewGame() {
+        gameState = .running(ScoreState(currentScore: 0, bestScore: 0))
+        
         makeCards()
         originalCards = cards
-        totalScore = 0
+        currentScore = 0
+        isGameOver = false
     }
 
     func resetGame() {
         cards = originalCards
+        currentScore = 0
+        isGameOver = false
     }
 
     private func makeCards() {
         cards = [Card]()
-        for _ in 0..<GameModel.numberOfRows {
-            for _ in 0..<GameModel.numberOfColumns {
-                let value = GameModel.cardValues.randomElement()!
-                let card = Card(value: value, isFixed: false)
-                cards.append(card)
-            }
-        }
+//        for _ in 0..<GameModel.numberOfRows {
+//            for _ in 0..<GameModel.numberOfColumns {
+//                let value = GameModel.cardValues.randomElement()!
+//                let card = Card(value: value, isFixed: false)
+//                cards.append(card)
+//            }
+//        }
 
-//        let 👻 = Card(value: "👻", isFixed: false)
-//        let 🐤 = Card(value: "🐤", isFixed: false)
-//        cards = [👻, 🐤, 🐤, 🐤, 🐤, 🐤,
-//                 👻, 🐤, 👻, 👻, 👻, 👻,
-//                 🐤, 🐤, 👻, 👻, 👻, 👻,
-//                 👻, 👻, 👻, 👻, 👻, 👻,
-//                 👻, 👻, 👻, 👻, 👻, 👻,
-//                 👻, 👻, 👻, 👻, 👻, 👻]
 
-//        cards = [Card(value: "0"), Card(value: "1"), Card(value: "2"),
-//                 Card(value: "3"), Card(value: "4"), Card(value: "5"),
-//                 Card(value: "6"), Card(value: "7"), Card(value: "8")]
+//        let stringCards = [
+//            "❤️", "👻", "❤️", "👻", "❤️", "❤️",
+//            "🐤", "❤️", "🐤", "❤️", "🐤", "👻",
+//            "👻", "👻", "👻", "❤️", "❤️", "❤️",
+//            "🐤", "🐤", "👻", "🐤", "❤️", "🐤",
+//            "❤️", "👻", "❤️", "❤️", "🐤", "❤️",
+//            "🐤", "👻", "🐤", "👻", "❤️", "👻"]
+        let stringCards = [
+            "❤️", "❤️", "❤️", "❤️", "❤️", "❤️",
+            "🐤", "❤️", "🐤", "❤️", "🐤", "❤️",
+            "❤️", "❤️", "❤️", "❤️", "❤️", "❤️",
+            "❤️", "🐤", "❤️", "🐤", "❤️", "🐤",
+            "❤️", "👻", "❤️", "❤️", "❤️", "❤️",
+            "🐤", "👻", "🐤", "❤️", "❤️", "❤️"]
+        cards = stringCards.map {Card(value: $0, isFixed: false)}
+
 
     }
     func printCards() {
@@ -90,14 +108,13 @@ class GameModel {
         print("\(numberOfDeletedCards) deleted")
         earnedScore = calculateEarnedScore(numberOfDeletedCards: numberOfDeletedCards)
         currentScore += earnedScore
-//        notify()
         moveCardsFromTopToBottom()
-//        notify()
         moveCardsFromRightToLeft()
+        isGameOver = !canDeleteCard()
         notify()
     }
 
-    func isGameRunning() -> Bool {
+    func canDeleteCard() -> Bool {
         // 消せるカードが存在するかチェック
         for index in 0..<cards.count {
 

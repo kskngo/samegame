@@ -3,9 +3,6 @@ import UIKit
 struct Card {
     var value: String
     var isFixed: Bool
-
-
-
 }
 
 class Game {

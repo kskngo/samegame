@@ -11,7 +11,8 @@ class GameViewController: UIViewController {
 
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var currentScoreLabel: UILabel!
-    
+    @IBOutlet weak var endOfGameLabel: UILabel!
+
     var game = GameModel()
     
     override func viewDidLoad() {
@@ -60,7 +61,21 @@ class GameViewController: UIViewController {
         }
 
         currentScoreLabel.text = String(game.currentScore)
-        
+
+        print("isGameOver=\(game.isGameOver)")
+        print("numberOfEnableCards=\(game.numberOfEnableCards)")
+        if game.isGameOver {
+
+            if game.numberOfEnableCards == 0 {
+                endOfGameLabel.text = "Great Job!"
+            } else {
+                endOfGameLabel.text = "Game Over..."
+            }
+            endOfGameLabel.isHidden = false
+
+        } else {
+            endOfGameLabel.isHidden = true
+        }
 
     }
 

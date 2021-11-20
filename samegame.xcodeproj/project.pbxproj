@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		21095BF0266F98C200A41808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21095BEF266F98C200A41808 /* AppDelegate.swift */; };
 		21095BF2266F98C200A41808 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21095BF1266F98C200A41808 /* SceneDelegate.swift */; };
-		21095BF4266F98C200A41808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21095BF3266F98C200A41808 /* ViewController.swift */; };
+		21095BF4266F98C200A41808 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21095BF3266F98C200A41808 /* GameViewController.swift */; };
 		21095BF7266F98C200A41808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21095BF5266F98C200A41808 /* Main.storyboard */; };
 		21095BFA266F98C200A41808 /* samegame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21095BF8266F98C200A41808 /* samegame.xcdatamodeld */; };
 		21095BFC266F98CC00A41808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21095BFB266F98CC00A41808 /* Assets.xcassets */; };
 		21095BFF266F98CC00A41808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21095BFD266F98CC00A41808 /* LaunchScreen.storyboard */; };
-		211707C4267CD85200B9681C /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211707C3267CD85200B9681C /* GameBrain.swift */; };
-		218BD92F2672C5310064C495 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BD92E2672C5300064C495 /* Card.swift */; };
+		216BF48D27006FB700FD60E2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BF48C27006FB700FD60E2 /* GameModel.swift */; };
+		216F59F92703360000DFCFF1 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216F59F82703360000DFCFF1 /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21095BEC266F98C200A41808 /* samegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21095BEF266F98C200A41808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21095BF1266F98C200A41808 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		21095BF3266F98C200A41808 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21095BF3266F98C200A41808 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		21095BF6266F98C200A41808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21095BF9266F98C200A41808 /* samegame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = samegame.xcdatamodel; sourceTree = "<group>"; };
 		21095BFB266F98CC00A41808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21095BFE266F98CC00A41808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21095C00266F98CC00A41808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		211707C3267CD85200B9681C /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
-		218BD92E2672C5300064C495 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		216BF48C27006FB700FD60E2 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		216F59F82703360000DFCFF1 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +64,14 @@
 			children = (
 				21095BEF266F98C200A41808 /* AppDelegate.swift */,
 				21095BF1266F98C200A41808 /* SceneDelegate.swift */,
-				21095BF3266F98C200A41808 /* ViewController.swift */,
-				218BD92E2672C5300064C495 /* Card.swift */,
+				216F59F82703360000DFCFF1 /* TopViewController.swift */,
+				21095BF3266F98C200A41808 /* GameViewController.swift */,
+				216BF48C27006FB700FD60E2 /* GameModel.swift */,
 				21095BF5266F98C200A41808 /* Main.storyboard */,
 				21095BFB266F98CC00A41808 /* Assets.xcassets */,
 				21095BFD266F98CC00A41808 /* LaunchScreen.storyboard */,
 				21095C00266F98CC00A41808 /* Info.plist */,
 				21095BF8266F98C200A41808 /* samegame.xcdatamodeld */,
-				211707C3267CD85200B9681C /* GameBrain.swift */,
 			);
 			path = samegame;
 			sourceTree = "<group>";
@@ -146,11 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21095BF4266F98C200A41808 /* ViewController.swift in Sources */,
+				21095BF4266F98C200A41808 /* GameViewController.swift in Sources */,
 				21095BFA266F98C200A41808 /* samegame.xcdatamodeld in Sources */,
-				218BD92F2672C5310064C495 /* Card.swift in Sources */,
+				216BF48D27006FB700FD60E2 /* GameModel.swift in Sources */,
 				21095BF0266F98C200A41808 /* AppDelegate.swift in Sources */,
-				211707C4267CD85200B9681C /* GameBrain.swift in Sources */,
+				216F59F92703360000DFCFF1 /* TopViewController.swift in Sources */,
 				21095BF2266F98C200A41808 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
