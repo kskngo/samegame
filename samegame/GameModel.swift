@@ -111,6 +111,9 @@ class GameModel {
         moveCardsFromTopToBottom()
         moveCardsFromRightToLeft()
         isGameOver = !canDeleteCard()
+        if isGameOver && numberOfEnableCards == 0 {
+            currentScore += 50
+        }
         notify()
     }
 

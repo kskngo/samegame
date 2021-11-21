@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
         if game.isGameOver {
 
             if game.numberOfEnableCards == 0 {
-                endOfGameLabel.text = "Great Job!"
+                endOfGameLabel.text = "よくできました！（ボーナス50点）"
             } else {
                 endOfGameLabel.text = "Game Over..."
             }
