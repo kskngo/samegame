@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="faK-d1-hXy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="faK-d1-hXy">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -382,14 +383,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svr-DT-JXQ">
-                                <rect key="frame" x="92" y="538" width="37" height="30"/>
-                                <state key="normal" title="Retry"/>
+                                <rect key="frame" x="92" y="538" width="92" height="30"/>
+                                <state key="normal" title="さいしょから"/>
                                 <connections>
                                     <action selector="tappedResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jCl-h7-AOw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-pR-5de">
-                                <rect key="frame" x="247" y="538" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-pR-5de">
+                                <rect key="frame" x="247" y="652" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <action selector="tappedNewGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzy-VE-cBF"/>
@@ -402,18 +404,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-fz-q7H">
+                                <rect key="frame" x="192" y="537" width="95.666666666666686" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="１つもどる"/>
+                                <connections>
+                                    <action selector="tappedUndoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZUb-PX-pro"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PaK-1N-1Ta" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3I5-Te-wpu"/>
                             <constraint firstItem="Svr-DT-JXQ" firstAttribute="top" secondItem="2KR-nh-gbd" secondAttribute="bottom" constant="23" id="Bfk-fb-5P4"/>
+                            <constraint firstItem="D8f-fz-q7H" firstAttribute="leading" secondItem="Svr-DT-JXQ" secondAttribute="trailing" constant="8" symbolic="YES" id="MmS-3Y-kZJ"/>
                             <constraint firstItem="2KR-nh-gbd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q3g-4A-TQQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PaK-1N-1Ta" secondAttribute="trailing" constant="20" id="ZVU-TR-gti"/>
                             <constraint firstItem="PaK-1N-1Ta" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="32" id="cFK-RP-U35"/>
-                            <constraint firstItem="LQg-pR-5de" firstAttribute="trailing" secondItem="2KR-nh-gbd" secondAttribute="trailing" id="ky2-gb-KeN"/>
+                            <constraint firstItem="D8f-fz-q7H" firstAttribute="top" secondItem="2KR-nh-gbd" secondAttribute="bottom" constant="22" id="hNn-Ze-hVa"/>
                             <constraint firstItem="2KR-nh-gbd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oM9-oE-Vao"/>
-                            <constraint firstItem="Svr-DT-JXQ" firstAttribute="baseline" secondItem="LQg-pR-5de" secondAttribute="baseline" id="p2A-TX-vKD"/>
                             <constraint firstItem="PaK-1N-1Ta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="stn-Vo-tZv"/>
                             <constraint firstItem="Svr-DT-JXQ" firstAttribute="leading" secondItem="2KR-nh-gbd" secondAttribute="leading" id="uyP-Zy-Ngn"/>
                         </constraints>
@@ -491,7 +501,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

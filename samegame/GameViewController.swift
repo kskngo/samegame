@@ -49,6 +49,12 @@ class GameViewController: UIViewController {
         game.startNewGame()
         updateCardUI()
     }
+
+    @IBAction func tappedUndoButton(_ sender: Any) {
+        game.undo()
+        updateCardUI()
+
+    }
     func updateCardUI() {
         for (index, card) in game.cards.enumerated(){
             if card.isFixed {
@@ -62,14 +68,12 @@ class GameViewController: UIViewController {
 
         currentScoreLabel.text = String(game.currentScore)
 
-        print("isGameOver=\(game.isGameOver)")
-        print("numberOfEnableCards=\(game.numberOfEnableCards)")
         if game.isGameOver {
 
             if game.numberOfEnableCards == 0 {
                 endOfGameLabel.text = "よくできました！（ボーナス50点）"
             } else {
-                endOfGameLabel.text = "Game Over..."
+                endOfGameLabel.text = "ゲームオーバー..."
             }
             endOfGameLabel.isHidden = false
 

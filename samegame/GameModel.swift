@@ -11,6 +11,10 @@ struct Card {
     var isFixed: Bool
 }
 
+struct GameScenes {
+    var score: Int
+    var cards: [Card]
+}
 
 
 class GameModel {
@@ -33,8 +37,7 @@ class GameModel {
     private static let cardValues = ["👻", "🐤", "❤️"]
 
     private(set)var cards = [Card]()
-    private(set)var originalCards = [Card]()
-//    private(set) var totalScore = 0
+    private(set) var gameScenes: [(cards: [Card], score: Int)] = []
     private(set) var currentScore = 0
     private(set) var earnedScore = 0
     private(set) var isGameOver = false
@@ -43,18 +46,31 @@ class GameModel {
     }
 
     func startNewGame() {
-        gameState = .running(ScoreState(currentScore: 0, bestScore: 0))
-        
-        makeCards()
-        originalCards = cards
+
+//        gameState = .running(ScoreState(currentScore: 0, bestScore: 0))
         currentScore = 0
+        makeCards()
+        gameScenes.append((cards, currentScore))
+
         isGameOver = false
     }
 
     func resetGame() {
-        cards = originalCards
+        print(gameScenes.count)
+        cards = gameScenes[0].cards
         currentScore = 0
         isGameOver = false
+    }
+
+    func undo() {
+        print(gameScenes.count)
+
+        if gameScenes.count > 1 {
+            gameScenes.removeLast()
+            cards = gameScenes.last!.cards
+            currentScore = gameScenes.last!.score
+
+        }
     }
 
     private func makeCards() {
@@ -104,6 +120,7 @@ class GameModel {
     }
 
     func tapedCard(tappedCardIndex: Int) {
+        print(gameScenes.count)
         let numberOfDeletedCards = deleteCards(tappedCardIndex: tappedCardIndex)
         print("\(numberOfDeletedCards) deleted")
         earnedScore = calculateEarnedScore(numberOfDeletedCards: numberOfDeletedCards)
@@ -114,6 +131,7 @@ class GameModel {
         if isGameOver && numberOfEnableCards == 0 {
             currentScore += 50
         }
+        gameScenes.append((cards, currentScore))
         notify()
     }
 
