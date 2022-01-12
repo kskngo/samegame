@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
 
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var highestScoreLabel: UILabel!
     @IBOutlet weak var endOfGameLabel: UILabel!
 
     var game = GameModel()
@@ -75,6 +76,9 @@ class GameViewController: UIViewController {
             } else {
                 endOfGameLabel.text = "ゲームオーバー..."
             }
+
+            highestScoreLabel.text = String(game.highestScore)
+            
             endOfGameLabel.isHidden = false
 
         } else {

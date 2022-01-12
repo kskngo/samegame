@@ -40,6 +40,7 @@ class GameModel {
     private(set) var gameScenes: [(cards: [Card], score: Int)] = []
     private(set) var currentScore = 0
     private(set) var earnedScore = 0
+    private(set) var highestScore = 0
     private(set) var isGameOver = false
     var numberOfEnableCards: Int {
         cards.filter{$0.isFixed == false}.count
@@ -128,8 +129,15 @@ class GameModel {
         moveCardsFromTopToBottom()
         moveCardsFromRightToLeft()
         isGameOver = !canDeleteCard()
-        if isGameOver && numberOfEnableCards == 0 {
-            currentScore += 50
+
+        if isGameOver {
+            if numberOfEnableCards == 0 {
+                currentScore += 50
+            }
+            if currentScore > highestScore {
+                highestScore = currentScore
+            }
+
         }
         gameScenes.append((cards, currentScore))
         notify()
