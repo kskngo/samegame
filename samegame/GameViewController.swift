@@ -77,7 +77,7 @@ class GameViewController: UIViewController {
                 endOfGameLabel.text = "ゲームオーバー..."
             }
 
-            highestScoreLabel.text = String(game.highestScore)
+            highestScoreLabel.text = String(game.bestScore)
             
             endOfGameLabel.isHidden = false
 

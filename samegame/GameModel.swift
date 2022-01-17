@@ -11,7 +11,7 @@ struct Card {
     var isFixed: Bool
 }
 
-struct GameScenes {
+struct GameScene {
     var score: Int
     var cards: [Card]
 }
@@ -37,10 +37,11 @@ class GameModel {
     private static let cardValues = ["👻", "🐤", "❤️"]
 
     private(set)var cards = [Card]()
-    private(set) var gameScenes: [(cards: [Card], score: Int)] = []
+//    private(set) var gameScenes: [(cards: [Card], score: Int)] = []
+    private(set) var gameScenes: [GameScene] = []
     private(set) var currentScore = 0
     private(set) var earnedScore = 0
-    private(set) var highestScore = 0
+    private(set) var bestScore = 0
     private(set) var isGameOver = false
     var numberOfEnableCards: Int {
         cards.filter{$0.isFixed == false}.count
@@ -51,21 +52,20 @@ class GameModel {
 //        gameState = .running(ScoreState(currentScore: 0, bestScore: 0))
         currentScore = 0
         makeCards()
-        gameScenes.append((cards, currentScore))
+        gameScenes.removeAll()
+//        gameScenes.append((cards, currentScore))
+        gameScenes.append(GameScene(score: currentScore, cards: cards))
 
         isGameOver = false
     }
 
     func resetGame() {
-        print(gameScenes.count)
         cards = gameScenes[0].cards
         currentScore = 0
         isGameOver = false
     }
 
     func undo() {
-        print(gameScenes.count)
-
         if gameScenes.count > 1 {
             gameScenes.removeLast()
             cards = gameScenes.last!.cards
@@ -134,12 +134,13 @@ class GameModel {
             if numberOfEnableCards == 0 {
                 currentScore += 50
             }
-            if currentScore > highestScore {
-                highestScore = currentScore
+            if currentScore > bestScore {
+                bestScore = currentScore
             }
 
         }
-        gameScenes.append((cards, currentScore))
+//        gameScenes.append((cards, currentScore))
+        gameScenes.append(GameScene(score: currentScore, cards: cards))
         notify()
     }
 
