@@ -12,8 +12,9 @@ struct Card {
 }
 
 struct GameScene {
-    var score: Int
     var cards: [Card]
+    var score: Int
+    var bestScore: Int
 }
 
 
@@ -54,7 +55,7 @@ class GameModel {
         makeCards()
         gameScenes.removeAll()
 //        gameScenes.append((cards, currentScore))
-        gameScenes.append(GameScene(score: currentScore, cards: cards))
+        gameScenes.append(GameScene(cards: cards, score: currentScore, bestScore: bestScore))
 
         isGameOver = false
     }
@@ -70,6 +71,7 @@ class GameModel {
             gameScenes.removeLast()
             cards = gameScenes.last!.cards
             currentScore = gameScenes.last!.score
+            bestScore = gameScenes.last!.bestScore
 
         }
     }
@@ -140,7 +142,7 @@ class GameModel {
 
         }
 //        gameScenes.append((cards, currentScore))
-        gameScenes.append(GameScene(score: currentScore, cards: cards))
+        gameScenes.append(GameScene(cards: cards, score: currentScore, bestScore: bestScore))
         notify()
     }
 
