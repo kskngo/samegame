@@ -20,49 +20,43 @@ struct GameScene {
 
 class GameModel {
 
-    struct ScoreState {
-        var currentScore: Int
-        var bestScore: Int
-    }
+//    struct ScoreState {
+//        var currentScore: Int
+//        var bestScore: Int
+//    }
+//    enum GameState {
+//        case idle
+//        case running(ScoreState)
+//        case gameOver(ScoreState)
+//    }
 
-    enum GameState {
-        case idle
-        case running(ScoreState)
-        case gameOver(ScoreState)
-    }
-
-    var gameState: GameState = .idle
+//    var gameState: GameState = .idle
 
     private static let numberOfRows =  6
     private static let numberOfColumns = 6
     private static let cardValues = ["👻", "🐤", "❤️"]
 
     private(set)var cards = [Card]()
-//    private(set) var gameScenes: [(cards: [Card], score: Int)] = []
     private(set) var gameScenes: [GameScene] = []
-    private(set) var currentScore = 0
     private(set) var earnedScore = 0
-    private(set) var bestScore = 0
     private(set) var isGameOver = false
     var numberOfEnableCards: Int {
         cards.filter{$0.isFixed == false}.count
     }
 
     func startNewGame() {
-
-//        gameState = .running(ScoreState(currentScore: 0, bestScore: 0))
-        currentScore = 0
         makeCards()
         gameScenes.removeAll()
-//        gameScenes.append((cards, currentScore))
-        gameScenes.append(GameScene(cards: cards, score: currentScore, bestScore: bestScore))
+        gameScenes.append(GameScene(cards: cards, score: 0, bestScore: 0))
 
         isGameOver = false
     }
 
     func resetGame() {
+        let gameScene = gameScenes.first
+        gameScenes.removeAll()
+        gameScenes.append(GameScene(cards: gameScene!.cards, score: 0, bestScore: gameScene!.bestScore))
         cards = gameScenes[0].cards
-        currentScore = 0
         isGameOver = false
     }
 
@@ -70,8 +64,8 @@ class GameModel {
         if gameScenes.count > 1 {
             gameScenes.removeLast()
             cards = gameScenes.last!.cards
-            currentScore = gameScenes.last!.score
-            bestScore = gameScenes.last!.bestScore
+//            currentScore = gameScenes.last!.score
+//            bestScore = gameScenes.last!.bestScore
 
         }
     }
@@ -123,14 +117,15 @@ class GameModel {
     }
 
     func tapedCard(tappedCardIndex: Int) {
-        print(gameScenes.count)
         let numberOfDeletedCards = deleteCards(tappedCardIndex: tappedCardIndex)
         print("\(numberOfDeletedCards) deleted")
         earnedScore = calculateEarnedScore(numberOfDeletedCards: numberOfDeletedCards)
+        var currentScore = gameScenes.last!.score
         currentScore += earnedScore
         moveCardsFromTopToBottom()
         moveCardsFromRightToLeft()
         isGameOver = !canDeleteCard()
+        var bestScore = gameScenes.last!.bestScore
 
         if isGameOver {
             if numberOfEnableCards == 0 {
