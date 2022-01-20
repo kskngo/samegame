@@ -15,6 +15,7 @@ struct GameScene {
     var cards: [Card]
     var score: Int
     var bestScore: Int
+    var isGameOver: Bool
 }
 
 
@@ -29,7 +30,6 @@ class GameModel {
 //        case running(ScoreState)
 //        case gameOver(ScoreState)
 //    }
-
 //    var gameState: GameState = .idle
 
     private static let numberOfRows =  6
@@ -39,7 +39,7 @@ class GameModel {
     private(set)var cards = [Card]()
     private(set) var gameScenes: [GameScene] = []
     private(set) var earnedScore = 0
-    private(set) var isGameOver = false
+
     var numberOfEnableCards: Int {
         cards.filter{$0.isFixed == false}.count
     }
@@ -47,26 +47,20 @@ class GameModel {
     func startNewGame() {
         makeCards()
         gameScenes.removeAll()
-        gameScenes.append(GameScene(cards: cards, score: 0, bestScore: 0))
-
-        isGameOver = false
+        gameScenes.append(GameScene(cards: cards, score: 0, bestScore: 0, isGameOver: false))
     }
 
     func resetGame() {
         let gameScene = gameScenes.first
         gameScenes.removeAll()
-        gameScenes.append(GameScene(cards: gameScene!.cards, score: 0, bestScore: gameScene!.bestScore))
+        gameScenes.append(GameScene(cards: gameScene!.cards, score: 0, bestScore: gameScene!.bestScore, isGameOver: false))
         cards = gameScenes[0].cards
-        isGameOver = false
     }
 
     func undo() {
         if gameScenes.count > 1 {
             gameScenes.removeLast()
             cards = gameScenes.last!.cards
-//            currentScore = gameScenes.last!.score
-//            bestScore = gameScenes.last!.bestScore
-
         }
     }
 
@@ -124,7 +118,7 @@ class GameModel {
         currentScore += earnedScore
         moveCardsFromTopToBottom()
         moveCardsFromRightToLeft()
-        isGameOver = !canDeleteCard()
+        let isGameOver = !canDeleteCard()
         var bestScore = gameScenes.last!.bestScore
 
         if isGameOver {
@@ -136,8 +130,7 @@ class GameModel {
             }
 
         }
-//        gameScenes.append((cards, currentScore))
-        gameScenes.append(GameScene(cards: cards, score: currentScore, bestScore: bestScore))
+        gameScenes.append(GameScene(cards: cards, score: currentScore, bestScore: bestScore, isGameOver: isGameOver))
         notify()
     }
 

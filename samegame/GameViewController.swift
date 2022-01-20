@@ -69,7 +69,7 @@ class GameViewController: UIViewController {
 
         currentScoreLabel.text = String(game.gameScenes.last!.score)
 
-        if game.isGameOver {
+        if game.gameScenes.last!.isGameOver {
 
             if game.numberOfEnableCards == 0 {
                 endOfGameLabel.text = "よくできました！（ボーナス50点）"
